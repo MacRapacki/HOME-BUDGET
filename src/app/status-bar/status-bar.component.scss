@@ -1,0 +1,84 @@
+:host {
+  display: block;
+  position: absolute;
+  left: 250px;
+  top: 0;
+  //   border: 2px solid black;
+  width: calc(100% - 250px);
+  height: 140px;
+  background-color: white;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .status {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+
+    .bar {
+      position: relative;
+      width: 80%;
+      height: 20px;
+      background-color: lightgray;
+      border-radius: 50px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: green;
+        border-radius: 50px;
+
+      }
+    }
+
+    &.budget {
+      color: green;
+
+      .bar {
+
+        &::before {
+          content: "";
+          background-color: green;
+          width: 80%;
+        }
+      }
+    }
+
+    &.left {
+      color: orange;
+
+      .bar {
+
+        &::before {
+          content: "";
+          background-color: orange;
+          width: 20%;
+        }
+      }
+
+    }
+
+    &.total {
+      color: red;
+
+      .bar {
+
+        &::before {
+          content: "";
+          background-color: red;
+          width: 50%;
+        }
+      }
+    }
+  }
+}
