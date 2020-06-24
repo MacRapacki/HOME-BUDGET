@@ -1,3 +1,8 @@
+///variables
+$budgetProc: 50%;
+
+
+
 :host {
   display: block;
   position: absolute;
@@ -29,8 +34,7 @@
       background-color: lightgray;
       border-radius: 50px;
 
-      &::before {
-        content: "";
+      .progress {
         position: absolute;
         left: 0;
         top: 0;
@@ -46,8 +50,7 @@
 
       .bar {
 
-        &::before {
-          content: "";
+        .progress {
           background-color: green;
           width: 80%;
         }
@@ -59,8 +62,7 @@
 
       .bar {
 
-        &::before {
-          content: "";
+        .progress {
           background-color: orange;
           width: 20%;
         }
@@ -73,8 +75,7 @@
 
       .bar {
 
-        &::before {
-          content: "";
+        .progress {
           background-color: red;
           width: 50%;
         }
