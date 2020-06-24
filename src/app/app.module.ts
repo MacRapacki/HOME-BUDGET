@@ -14,6 +14,7 @@ import { BankComponent } from './pages/bank/bank.component';
 import { HealthComponent } from './pages/health/health.component';
 import { SportComponent } from './pages/sport/sport.component';
 import { IncomeComponent } from './pages/income/income.component';
+import { RoutingComponent } from './routing/routing.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { IncomeComponent } from './pages/income/income.component';
     BankComponent,
     HealthComponent,
     SportComponent,
-    IncomeComponent
+    IncomeComponent,
+    RoutingComponent
   ],
   imports: [
     BrowserModule,

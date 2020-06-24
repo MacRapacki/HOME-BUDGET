@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusBarComponent implements OnInit {
 
-  budgetProc: number = 88;
+  budgetProc: number = 66;
   leftProc: number = 20;
   expensesProc: number = 50;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }

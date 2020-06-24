@@ -2,7 +2,7 @@
   <div class="name">Budget</div>
   <div class="money">1000zł</div>
   <div class="bar">
-    <div class="progress" style="width: {{ budgetProc }}%"></div>
+    <div class="progress" [style.width.%]="budgetProc"></div>
   </div>
   <div class="precent">{{ budgetProc }}%</div>
 </div>
@@ -11,7 +11,7 @@
   <div class="name">Left</div>
   <div class="money">200zł</div>
   <div class="bar">
-    <div class="progress"></div>
+    <div class="progress" [style.width.%]="leftProc"></div>
   </div>
   <div class="precent">{{ leftProc }}%</div>
 </div>
@@ -20,7 +20,7 @@
   <div class="name">Total expenses</div>
   <div class="money">800zł</div>
   <div class="bar">
-    <div class="progress"></div>
+    <div class="progress" [style.width.%]="expensesProc"></div>
   </div>
   <div class="precent">{{ expensesProc }}%</div>
 </div>
