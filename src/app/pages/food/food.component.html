@@ -1,1 +1,35 @@
-<p>food works!</p>
+<div class="title">
+  <p class="title__name">Food summary</p>
+  <p class="title__summary"> Total Spent: £ </p>
+</div>
+
+<div class="shopping__list">
+
+  <button class="add" type="button">Add +</button>
+
+
+  <form class="form">
+    <label> Choose date <br>
+      <input type="date" name="date">
+    </label>
+    <label> Add shop name
+      <input type="text" name="shop">
+    </label>
+    <label>Add item
+      <input type="text" name="item">
+    </label>
+    <label>Add price (£)
+      <input type="number" name="price">
+    </label>
+    <button type="submit">Submit</button>
+
+
+  </form>
+  <div class="row" *ngFor="let list of arr; let i = index">
+    <div>{{ list.listNumber }}</div>
+    <div>{{ list.date }}</div>
+    <div>{{ list.shop }}</div>
+    <div>{{ list.item }}</div>
+    <div>{{ list.price }}</div>
+  </div>
+</div>

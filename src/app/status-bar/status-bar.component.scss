@@ -27,6 +27,10 @@ $budgetProc: 50%;
     font-size: 18px;
     font-weight: bold;
 
+    .name {
+      width: 50%;
+    }
+
     .bar {
       position: relative;
       width: 80%;

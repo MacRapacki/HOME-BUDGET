@@ -7,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodComponent implements OnInit {
 
-  constructor() { }
+  arr = [
+    {
+      listNumber: "#",
+      date: "Date",
+      shop: "Shop",
+      item: "Item",
+      price: "Price",
+    }
+  ]
+
+  constructor() {
+
+
+  }
 
   ngOnInit(): void {
   }
