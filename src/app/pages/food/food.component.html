@@ -1,35 +1,35 @@
 <div class="title">
-  <p class="title__name">Food summary</p>
-  <p class="title__summary"> Total Spent: £ </p>
+  <p class="title__name">Food summary </p>
+  <p class="title__summary"> Total Spent: £{{ totalSpent }} </p>
 </div>
 
 <div class="shopping__list">
 
-  <button class="add" type="button">Add +</button>
+  <button class="add" type="button" (click)="showForm()">Add +</button>
 
 
   <form class="form">
     <label> Choose date <br>
-      <input type="date" name="date">
+      <input class="date" type="date" name="date" [(ngModel)]="date" value="date">
     </label>
     <label> Add shop name
-      <input type="text" name="shop">
+      <input class="shop" type="text" name="shop" [(ngModel)]="shopName">
     </label>
     <label>Add item
-      <input type="text" name="item">
+      <input class="item" type="text" name="item" [(ngModel)]="itemName">
     </label>
     <label>Add price (£)
-      <input type="number" name="price">
+      <input class="price" type="number" name="price" min="0" [(ngModel)]="priceValue">
     </label>
-    <button type="submit">Submit</button>
-
-
+    <button class="submit" type="submit" (click)="addItem($event)">Submit</button>
   </form>
+
+
   <div class="row" *ngFor="let list of arr; let i = index">
-    <div>{{ list.listNumber }}</div>
+    <div>{{ i === 0 ? "#" : i }}</div>
     <div>{{ list.date }}</div>
     <div>{{ list.shop }}</div>
     <div>{{ list.item }}</div>
-    <div>{{ list.price }}</div>
+    <div>{{ list.price === "Price" ?  "Price"  :  "£" + list.price }}</div>
   </div>
 </div>

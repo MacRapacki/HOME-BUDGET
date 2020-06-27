@@ -15,6 +15,7 @@ import { HealthComponent } from './pages/health/health.component';
 import { SportComponent } from './pages/sport/sport.component';
 import { IncomeComponent } from './pages/income/income.component';
 import { RoutingComponent } from './routing/routing.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,11 +31,13 @@ import { RoutingComponent } from './routing/routing.component';
     HealthComponent,
     SportComponent,
     IncomeComponent,
-    RoutingComponent
+    RoutingComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
