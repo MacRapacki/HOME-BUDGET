@@ -25,7 +25,7 @@ export class FoodComponent implements OnInit {
   date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
   shopName: string = "";
   itemName: string = "";
-  priceValue: number = 0
+  priceValue: any = 0
 
   constructor() {
 
