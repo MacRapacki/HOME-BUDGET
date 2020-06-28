@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SrvRecord } from 'dns';
+// import { SrvRecord } from 'dns';
 
 @Component({
   selector: 'app-food',
@@ -63,10 +63,6 @@ export class FoodComponent implements OnInit {
 
   }
 
-  todayDate() {
-    const today = new Date();
-    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    return date
-  }
+
 
 }
