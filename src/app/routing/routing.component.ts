@@ -12,4 +12,8 @@ export class RoutingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showTotalBudget(value: number) {
+    console.log(value);
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IncomeService } from '../pages/income.service';
+
 
 @Component({
   selector: 'app-status-bar',
@@ -7,15 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusBarComponent implements OnInit {
 
-  budgetProc: number = 66;
+  budgetProc: number = 100;
   leftProc: number = 20;
   expensesProc: number = 50;
 
-  constructor() {
+  totalBudget: number = 0;
+
+  constructor(private IncomeService: IncomeService) {
 
   }
 
   ngOnInit(): void {
+    this.IncomeService.share.subscribe(x => this.totalBudget = x)
   }
 
 

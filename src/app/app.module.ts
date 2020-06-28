@@ -16,6 +16,8 @@ import { SportComponent } from './pages/sport/sport.component';
 import { IncomeComponent } from './pages/income/income.component';
 import { RoutingComponent } from './routing/routing.component';
 import { FormsModule } from '@angular/forms';
+import { IncomeService } from './pages/income.service';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [IncomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
