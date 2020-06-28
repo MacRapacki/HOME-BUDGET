@@ -1,1 +1,27 @@
-<p>income works!</p>
+<h2>Income</h2>
+<div class="income__list">
+
+  <button class="add" type="button" (click)="showForm()">Add +</button>
+
+
+  <form class="form">
+    <label> Choose date <br>
+      <input class="date" type="date" name="date" [(ngModel)]="date" value="{{date}}">
+    </label>
+    <label> Source of income
+      <input class="shop" type="text" name="shop" [(ngModel)]="sourceName">
+    </label>
+    <label>Add amount (£)
+      <input class="price" type="number" name="price" min="0" [(ngModel)]="incomeAmount">
+    </label>
+    <button class="submit" type="submit" (click)="addItem($event)">Submit</button>
+  </form>
+
+
+  <div class="row" *ngFor="let list of arr; let i = index">
+    <div>{{ i === 0 ? "#" : i }}</div>
+    <div>{{ list.date }}</div>
+    <div>{{ list.source }}</div>
+    <div>{{ list.amount === "Amount" ?  "Amount"  :  "£" + list.amount }}</div>
+  </div>
+</div>

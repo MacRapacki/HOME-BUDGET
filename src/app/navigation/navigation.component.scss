@@ -74,6 +74,11 @@
             color: white;
             background-color: green;
           }
+
+          &.active {
+            background-color: lightgray;
+            color: green;
+          }
         }
       }
     }
