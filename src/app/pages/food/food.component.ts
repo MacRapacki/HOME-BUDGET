@@ -22,7 +22,7 @@ export class FoodComponent implements OnInit {
   totalSpent: number = 0;
 
 
-  date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
+  date = new Date().toLocaleDateString('en-CA');
   shopName: string = "";
   itemName: string = "";
   priceValue: any = 0
@@ -42,7 +42,7 @@ export class FoodComponent implements OnInit {
   addItem(e) {
     e.preventDefault();
 
-    if (this.date === "" || this.shopName === "" || this.itemName === "" || this.priceValue === 0) { return alert('Fill the form.') };
+    if (this.shopName === "" || this.itemName === "" || this.priceValue === 0) { return alert('Fill the form.') };
 
     const listItem = {
       listNumber: "#",
