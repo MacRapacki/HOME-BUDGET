@@ -22,7 +22,7 @@ export class FoodComponent implements OnInit {
   totalSpent: number = 0;
 
 
-  date = new Date();
+  date = new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate();
   shopName: string = "";
   itemName: string = "";
   priceValue: number = 0
@@ -61,6 +61,12 @@ export class FoodComponent implements OnInit {
     this.itemName = "";
     this.priceValue = 0
 
+  }
+
+  todayDate() {
+    const today = new Date();
+    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    return date
   }
 
 }
