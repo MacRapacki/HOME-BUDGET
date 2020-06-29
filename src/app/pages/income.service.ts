@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -26,7 +25,9 @@ export class IncomeService {
 
   public updateIncomeList = this.IncomeList.asObservable();
 
+
   constructor() { }
+
 
   ///Get Income value 
   getIncome(value) {
@@ -36,7 +37,7 @@ export class IncomeService {
 
   /// Get Income list
   getIncomeLIst(list) {
-    this.IncomeList.next(list)
+    this.IncomeList.next(list);
   }
 
 };

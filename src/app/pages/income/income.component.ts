@@ -11,15 +11,7 @@ import { IncomeService } from '../income.service';
 })
 export class IncomeComponent implements OnInit {
 
-  arr = [
-    {
-      listNumber: "#",
-      date: "Date",
-      source: "Source",
-      amount: 0,
-
-    },
-  ];
+  arr = [];
 
 
   /// Form data
@@ -27,22 +19,54 @@ export class IncomeComponent implements OnInit {
   sourceName: string = "";
   incomeAmount: number = 0;
 
+
   /// Total income
-  totalIncome: number = 0;
+  totalIncome: any = 0;
 
 
   constructor(private IncomeService: IncomeService) { }
 
 
   ngOnInit(): void {
-    this.IncomeService.updateIncomeList.subscribe(x => this.arr = x)
+    // this.IncomeService.updateIncomeList.subscribe(x => this.arr = x);
+    this.getArrayList();
+    // this.getTotalIncome();
   }
+
+  /// get list from local storage
+  getArrayList() {
+    if (localStorage.getItem('arrayList') === null) {
+      this.arr = [
+        {
+          listNumber: "#",
+          date: "Date",
+          source: "Source",
+          amount: 0,
+
+        },
+      ];
+    }
+    else {
+      this.arr = JSON.parse(localStorage.getItem('arrayList'))
+    }
+  };
+
+  /// get totalIncome from storage
+  // getTotalIncome() {
+  //   if (localStorage.getItem('totalIncome') === null) {
+  //     this.totalIncome = 1;
+  //   }
+
+  //   else {
+  //     this.totalIncome = JSON.parse(localStorage.getItem('totalIncome'))
+  //   }
+  // };
 
 
   /// show form on click
   showForm() {
     document.querySelector(".form").classList.toggle("active")
-  }
+  };
 
 
   /// add incom info to list and update array
@@ -74,6 +98,10 @@ export class IncomeComponent implements OnInit {
     /// send total income and new aray service
     this.IncomeService.getIncome(this.totalIncome);
     this.IncomeService.getIncomeLIst(this.arr);
+
+    /// add to local storage
+    localStorage.setItem('arrayList', JSON.stringify(this.arr));
+    localStorage.setItem('totalIncome', (this.totalIncome));
 
   }
 
