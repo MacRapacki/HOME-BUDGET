@@ -35,7 +35,9 @@ export class IncomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.IncomeService.updateIncomeList.subscribe(x => this.arr = x)
   }
+
 
   /// show form on click
   showForm() {
@@ -57,7 +59,7 @@ export class IncomeComponent implements OnInit {
     };
 
     newArr.push(listItem);
-
+    /// reset form inputs
     this.sourceName = "";
     this.incomeAmount = 0;
 
@@ -68,10 +70,10 @@ export class IncomeComponent implements OnInit {
     };
 
     this.arr = newArr;
-    console.log(newArr)
-    /// send total income to service
-    this.IncomeService.getValue(this.totalIncome)
 
+    /// send total income and new aray service
+    this.IncomeService.getIncome(this.totalIncome);
+    this.IncomeService.getIncomeLIst(this.arr);
 
   }
 
