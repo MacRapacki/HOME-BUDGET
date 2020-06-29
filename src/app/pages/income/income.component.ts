@@ -30,7 +30,6 @@ export class IncomeComponent implements OnInit {
   ngOnInit(): void {
     // this.IncomeService.updateIncomeList.subscribe(x => this.arr = x);
     this.getArrayList();
-    // this.getTotalIncome();
   }
 
   /// get list from local storage
@@ -50,17 +49,6 @@ export class IncomeComponent implements OnInit {
       this.arr = JSON.parse(localStorage.getItem('arrayList'))
     }
   };
-
-  /// get totalIncome from storage
-  // getTotalIncome() {
-  //   if (localStorage.getItem('totalIncome') === null) {
-  //     this.totalIncome = 1;
-  //   }
-
-  //   else {
-  //     this.totalIncome = JSON.parse(localStorage.getItem('totalIncome'))
-  //   }
-  // };
 
 
   /// show form on click
@@ -97,7 +85,7 @@ export class IncomeComponent implements OnInit {
 
     /// send total income and new aray service
     this.IncomeService.getIncome(this.totalIncome);
-    this.IncomeService.getIncomeLIst(this.arr);
+    // this.IncomeService.getIncomeLIst(this.arr);
 
     /// add to local storage
     localStorage.setItem('arrayList', JSON.stringify(this.arr));

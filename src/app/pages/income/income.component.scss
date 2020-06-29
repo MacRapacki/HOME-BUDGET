@@ -78,6 +78,10 @@ h2 {
     border-bottom: 1.5px solid lightgrey;
     padding-bottom: 5px;
 
+    &:nth-child(even) {
+      background-color: rgb(167, 167, 167);
+    }
+
     div {
       width: 20%;
       max-width: 20%;

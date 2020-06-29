@@ -20,12 +20,11 @@ export class StatusBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.IncomeService.share.subscribe(x => this.totalBudget = x);
     this.getTotalIncome();
   }
 
-  /// get totalIncome from storage
+  /// get totalBudget from storage
   getTotalIncome() {
     if (localStorage.getItem('totalIncome') === null) {
       this.totalBudget = 1;

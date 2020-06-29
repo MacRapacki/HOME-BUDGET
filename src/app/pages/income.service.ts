@@ -12,18 +12,18 @@ export class IncomeService {
 
 
   /// Income List
-  private IncomeList = new BehaviorSubject<any>(
-    [
-      {
-        listNumber: "#",
-        date: "Date",
-        source: "Source",
-        amount: 0,
+  // private IncomeList = new BehaviorSubject<any>(
+  //   [
+  //     {
+  //       listNumber: "#",
+  //       date: "Date",
+  //       source: "Source",
+  //       amount: 0,
 
-      },
-    ]);
+  //     },
+  //   ]);
 
-  public updateIncomeList = this.IncomeList.asObservable();
+  // public updateIncomeList = this.IncomeList.asObservable();
 
 
   constructor() { }
@@ -36,9 +36,9 @@ export class IncomeService {
 
 
   /// Get Income list
-  getIncomeLIst(list) {
-    this.IncomeList.next(list);
-  }
+  // getIncomeLIst(list) {
+  //   this.IncomeList.next(list);
+  // }
 
 };
 
