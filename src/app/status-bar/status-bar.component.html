@@ -9,18 +9,18 @@
 
 <div class="status left">
   <div class="name">Left</div>
-  <div class="money">£200</div>
+  <div class="money">£{{ moneyLeftCounter() }}</div>
   <div class="bar">
-    <div class="progress" [style.width.%]="leftProc"></div>
+    <div class="progress" [style.width.%]="leftPrecentCounter()"></div>
   </div>
-  <div class="precent">{{ leftProc }}%</div>
+  <div class="precent">{{ leftPrecentCounter() }}%</div>
 </div>
 
 <div class="status total">
   <div class="name">Total expenses</div>
-  <div class="money">£800</div>
+  <div class="money">£{{ totalExpenses }}</div>
   <div class="bar">
-    <div class="progress" [style.width.%]="expensesProc"></div>
+    <div class="progress" [style.width.%]="expensesPrecentCounter()"></div>
   </div>
-  <div class="precent">{{ expensesProc }}%</div>
+  <div class="precent">{{ expensesPrecentCounter() }}%</div>
 </div>

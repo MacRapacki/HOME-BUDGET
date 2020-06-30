@@ -14,13 +14,13 @@ export class IncomeComponent implements OnInit {
   arr = [];
 
 
-  /// Form data
+  /// FORM DATA
   date = new Date().toLocaleDateString('en-CA');
   sourceName: string = "";
   incomeAmount: number = 0;
 
 
-  /// Total income
+  /// TOTAL INCOME
   totalIncome: any = 0;
 
 
@@ -32,7 +32,7 @@ export class IncomeComponent implements OnInit {
     this.getArrayList();
   }
 
-  /// get list from local storage
+  ///GET LIST FROM LOCAL STORAGE
   getArrayList() {
     if (localStorage.getItem('arrayList') === null) {
       this.arr = [
@@ -51,13 +51,13 @@ export class IncomeComponent implements OnInit {
   };
 
 
-  /// show form on click
+  /// "ADD+" BUTTON FUNCTION
   showForm() {
     document.querySelector(".form").classList.toggle("active")
   };
 
 
-  /// add incom info to list and update array
+  /// SUBMIT FORM BUTTON FUNCTION
   public addItem(e) {
     e.preventDefault();
     const newArr = [...this.arr]
@@ -71,6 +71,8 @@ export class IncomeComponent implements OnInit {
     };
 
     newArr.push(listItem);
+
+
     /// reset form inputs
     this.sourceName = "";
     this.incomeAmount = 0;
@@ -83,9 +85,9 @@ export class IncomeComponent implements OnInit {
 
     this.arr = newArr;
 
-    /// send total income and new aray service
+    /// send total income to service
     this.IncomeService.getIncome(this.totalIncome);
-    // this.IncomeService.getIncomeLIst(this.arr);
+
 
     /// add to local storage
     localStorage.setItem('arrayList', JSON.stringify(this.arr));

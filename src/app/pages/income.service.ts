@@ -6,10 +6,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class IncomeService {
 
-  /// Income data
+  /// INCOME DATA
   private budget = new BehaviorSubject<number>(0);
   public share = this.budget.asObservable();
 
+
+  /// FOOD DATA
+  private totalFoodSpent = new BehaviorSubject<number>(0);
+  public shareFoodSpent = this.totalFoodSpent.asObservable();
 
   /// Income List
   // private IncomeList = new BehaviorSubject<any>(
@@ -29,11 +33,16 @@ export class IncomeService {
   constructor() { }
 
 
-  ///Get Income value 
+  ///GET INCOME DATA
   getIncome(value) {
     this.budget.next(value);
   }
 
+
+  ///GET FOOD DATA
+  getFoodSpent(value) {
+    this.totalFoodSpent.next(value);
+  }
 
   /// Get Income list
   // getIncomeLIst(list) {

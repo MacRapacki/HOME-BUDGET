@@ -14,6 +14,9 @@ export class StatusBarComponent implements OnInit {
   expensesProc: number = 50;
 
   totalBudget: number = 0;
+  totalExpenses: number = 0;
+
+
 
   constructor(private IncomeService: IncomeService) {
 
@@ -21,13 +24,16 @@ export class StatusBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.IncomeService.share.subscribe(x => this.totalBudget = x);
+    this.IncomeService.shareFoodSpent.subscribe(x => this.totalExpenses = x);
     this.getTotalIncome();
+    this.getFoodSpent();
   }
 
-  /// get totalBudget from storage
+
+  /// GET TOTAL BUDGET FROM STORAGE
   getTotalIncome() {
     if (localStorage.getItem('totalIncome') === null) {
-      this.totalBudget = 1;
+      this.totalBudget = 0;
     }
 
     else {
@@ -36,6 +42,32 @@ export class StatusBarComponent implements OnInit {
   };
 
 
+  ///GET TOTAL FOOD SPENT
+  getFoodSpent() {
+    if (localStorage.getItem('foodTotalSpent') === null) {
+      this.totalExpenses = 0;
+    }
+
+    else {
+      this.totalExpenses = JSON.parse(localStorage.getItem('foodTotalSpent'))
+    }
+  }
+
+
+  ///MONEY LEFT COUNTER
+  moneyLeftCounter() {
+    return this.totalBudget - this.totalExpenses
+  }
+
+
+  ///PRECENT COUNTER
+  leftPrecentCounter() {
+    return (this.totalBudget - this.totalExpenses) * 100 / this.totalBudget
+  }
+
+  expensesPrecentCounter() {
+    return this.totalExpenses * 100 / this.totalBudget
+  }
 }
 
 
