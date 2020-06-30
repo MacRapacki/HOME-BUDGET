@@ -62,11 +62,11 @@ export class StatusBarComponent implements OnInit {
 
   ///PRECENT COUNTER
   leftPrecentCounter() {
-    return (this.totalBudget - this.totalExpenses) * 100 / this.totalBudget
+    return ((this.totalBudget - this.totalExpenses) * 100 / this.totalBudget).toFixed(1)
   }
 
   expensesPrecentCounter() {
-    return this.totalExpenses * 100 / this.totalBudget
+    return (this.totalExpenses * 100 / this.totalBudget).toFixed(1)
   }
 }
 
