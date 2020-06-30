@@ -10,7 +10,7 @@ import { IncomeService } from '../pages/income.service';
 export class StatusBarComponent implements OnInit {
 
   budgetProc: number = 100;
-  leftProc: number = 20;
+  leftProc: number = 50;
   expensesProc: number = 50;
 
   totalBudget: number = 0;
@@ -62,11 +62,13 @@ export class StatusBarComponent implements OnInit {
 
   ///PRECENT COUNTER
   leftPrecentCounter() {
-    return ((this.totalBudget - this.totalExpenses) * 100 / this.totalBudget).toFixed(1)
+    const value = ((this.totalBudget - this.totalExpenses) * 100 / this.totalBudget).toFixed(1);
+    return isNaN(parseInt(value)) ? 0 : value;
   }
 
   expensesPrecentCounter() {
-    return (this.totalExpenses * 100 / this.totalBudget).toFixed(1)
+    const value = (this.totalExpenses * 100 / this.totalBudget).toFixed(1);
+    return isNaN(parseInt(value)) ? 0 : value;
   }
 }
 
