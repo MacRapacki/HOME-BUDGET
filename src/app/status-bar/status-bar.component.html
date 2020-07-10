@@ -7,15 +7,6 @@
   <div class="precent">{{ budgetProc }}%</div>
 </div>
 
-<div class="status left">
-  <div class="name">Left</div>
-  <div class="money">£{{ moneyLeftCounter() }}</div>
-  <div class="bar">
-    <div class="progress" [style.width.%]="leftPrecentCounter()"></div>
-  </div>
-  <div class="precent">{{ leftPrecentCounter() }}%</div>
-</div>
-
 <div class="status total">
   <div class="name">Total expenses</div>
   <div class="money">£{{ totalExpenses }}</div>
@@ -24,4 +15,13 @@
   </div>
   <div class="precent">{{ expensesPrecentCounter() }}%
   </div>
+</div>
+
+<div class="status left">
+  <div class="name">Left</div>
+  <div class="money">£{{ moneyLeftCounter() }}</div>
+  <div class="bar">
+    <div class="progress" [style.width.%]="leftPrecentCounter()"></div>
+  </div>
+  <div class="precent">{{ leftPrecentCounter() }}%</div>
 </div>
