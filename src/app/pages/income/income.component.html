@@ -1,7 +1,7 @@
 <h2>Income </h2>
 <div class="income__list">
 
-  <button class="add" type="button" (click)="showForm()">Add ++</button>
+  <button class="add" type="button" (click)="showForm()">Add +</button>
 
 
   <form class="form">
@@ -19,6 +19,7 @@
 
 
   <div class="row" *ngFor="let list of arr; let i = index">
+
     <div>{{ i === 0 ? "#" : i }}</div>
     <div>{{ list.date }}</div>
     <div>{{ list.source }}</div>
